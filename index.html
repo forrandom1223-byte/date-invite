@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Date Invitation 💖</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #fff0f5;
+    height: 100vh;
+    margin: 0;
+  }
+  h1 {
+    margin-top: 40px;
+  }
+  img {
+    max-width: 300px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .buttons {
+    position: relative;
+    height: 200px;
+  }
+  button {
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  #yes {
+    background: #ff4d6d;
+    color: white;
+  }
+  #no {
+    background: #999;
+    color: white;
+    position: absolute;
+  }
+</style>
+</head>
+
+<body>
+
+<h3>STEP 1. ASK YOUR QUESTION</h3>
+<h1>WOULD YOU LIKE TO GO ON A DATE WITH ME? 💌</h1>
+
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute GIF">
+
+<div class="buttons">
+  <button id="yes" onclick="yesClicked()">YES 💖</button>
+  <button id="no" onmouseover="moveNo()">NO 😅</button>
+</div>
+
+<script>
+  let yesSize = 20;
+
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * 300;
+    const y = Math.random() * 150;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    yesSize += 5;
+    document.getElementById("yes").style.fontSize = yesSize + "px";
+  }
+
+  function yesClicked() {
+    document.body.innerHTML = "<h1>YAY! 💕 SEE YOU ON OUR DATE 😍</h1>";
+  }
+</script>
+
+</body>
+</html>
