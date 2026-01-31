@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Perfect Date Invite 💖</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #fff0f5;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  h1 { margin-top: 40px; }
+  img { max-width: 300px; border-radius: 12px; margin: 20px 0; }
+  .buttons { position: relative; height: 200px; }
+  button {
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  #yes { background: #ff4d6d; color: white; left: 50%; transform: translateX(-50%); top: 50px; }
+  #no { background: #999; color: white; left: 40%; top: 120px; }
+</style>
+</head>
+<body>
+
+<h3>STEP 1. ASK YOUR QUESTION</h3>
+<h1>WOULD YOU LIKE TO GO ON A DATE WITH ME? 💌</h1>
+
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute GIF">
+
+<div class="buttons">
+  <button id="yes" onclick="yesClicked()">YES 💖</button>
+  <button id="no">NO 😅</button>
+</div>
+
+<script>
+let yesSize = 20;
+const noBtn = document.getElementById("no");
+
+function randomMove(button) {
+  const maxX = window.innerWidth - button.offsetWidth - 20;
+  const maxY = window.innerHeight - button.offsetHeight - 20;
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+  button.style.left = x + "px";
+  button.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", () => {
+  randomMove(noBtn);
+  yesSize += 3; // YES grows slightly when NO is hovered
+  document.getElementById("yes").style.fontSize = yesSize + "px";
+});
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <h1>YAY! 💕 SEE YOU ON OUR DATE 😍</h1>
+    <img src="https://media.giphy.com/media/111ebonMs90YLu/giphy.gif" alt="Excited GIF" style="max-width:300px; border-radius:12px;">
+  `;
+}
+</script>
+
+</body>
+</html>
